@@ -1,0 +1,28 @@
+<div class="productlist clearfix">
+  <div class="ranking">
+      <h1>ランキング</h1>
+    <ul>
+      <li class="product">
+        <div class="image" style="background-image: url(<%= @product.image %>)";>
+          1位
+        </div> 
+        <div class="nickname">
+          <%= @product.title %>フォローする
+        </div> 
+      </li>
+    </ul>
+  </div>
+  <div class="product-wrap">
+    <h1>みんなの投稿</h1>
+     <ul>
+       <li class="product">
+         <div class="image" style="background-image: url(<%= @product.image %>)";>
+         </div> 
+         <div class="nickname">
+            <%= @product.title %>フォローする
+         </div> 
+       </li>
+     </ul>   
+  </div>  
+</div>  
+  
