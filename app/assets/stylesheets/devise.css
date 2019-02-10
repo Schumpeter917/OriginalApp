@@ -1,0 +1,19 @@
+.form-wrap{
+    height: 75vh;
+    margin-top: 140px;
+    position: relative;
+}
+
+.form{
+    height: 80%;
+    background-color: white;
+    width: 60%;
+    top: 0;
+    bottom: 100px;
+    left: 0;
+    right: 0;
+    position: absolute;
+    margin: auto;
+}
+
+
