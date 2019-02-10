@@ -12,18 +12,29 @@
   <body>
     <header class="header clearfix">
       <div class="header-top">
-        <h3>OriginalApp</h3>
+        <%= link_to "OriginalApp", '/products/' %>
       </div>  
       <div class="header-nav">
         <div class="search-form">
           <h3>検索</h3>
         </div>
-        <div class="button">
-          <h3>新規登録</h3>
-        </div>
-        <div class="button">
-          <h3>ログイン</h3>
-        </div>  
+        <% unless user_signed_in? %>
+          <div class="button">
+            <%= link_to "新規登録", new_user_registration_path, class: 'post' %>
+          </div>
+          <div class="button">
+            <%= link_to "ログイン", new_user_session_path, class: 'post' %>
+          </div>
+        <% else %>
+          <div class="button">
+            <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+          </div>
+          <div class="button">
+            <a href="/users/<%= current_user.id %>">
+              <%= current_user.nickname %>
+            </a>  
+          </div>  
+        <% end %>
       </div>  
     </header>
     
