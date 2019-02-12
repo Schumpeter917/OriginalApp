@@ -1,10 +1,14 @@
 class ProductsController < ApplicationController
   
-  before_action :move_to_index, except: :index
+  before_action :move_to_index, except: [:index, :show]
   
   def index
     @products = Product.order("created_at DESC")
     @product = Product.find(5)
+  end
+  
+  def show
+    @product = User.find(params[:id])
   end
   
   private
