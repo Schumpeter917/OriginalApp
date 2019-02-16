@@ -11,20 +11,16 @@
   background-color: yellow;
 }
 
-
 .product-wrap{
   width: 100%;
-  margin-top: 0;
   background-color: orange;
 }
 
 .product{
   display: inline-block;
-  background-color: red;
-  width: 30%;
-  height: 400px;
+  width: 32%;
+  max-height: 400px;
   margin: 2px;
-  box-shadow: 0 0 6px gray;
 }
 
 .title{
@@ -38,7 +34,7 @@
 .image{
   display: block;
   background-color: blue;
-  height: 350px;
+  max-height: 350px;
 }
 
 .nickname{
@@ -49,11 +45,86 @@
   font-size: 18px;
 }
 
+.detail-wrap{
+  min-height: 1000px;
+  margin: 140px 0;
+  position: relative;
+}
+
+.detail{
+  width: 65%;
+  background-color: white;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 600px;
+  position: absolute;
+  margin: auto;
+  padding: 20px;
+}
+
+.image-detail{
+  width: 300px;
+  max-height: 350px;
+  margin: 2px;
+  float: left;
+}
+
+.text{
+  width: 300px;
+  min-height: 100px;
+  background-color: blue;
+  margin: 2px;
+  float: right;
+}
+
+// .right-content{
+//   float: right;
+// }
+
+.title-detail{
+  width: 300px;
+  min-height: 50px;
+  background-color: yellow;
+  margin: 2px;
+  float: right;
+}
+
+.ingredient{
+  width: 300px;
+  min-height: 100px;
+  background-color: yellow;
+  margin: 2px;
+  float: right;
+}
+
+.recipe{
+  width: 100%;
+  min-height: 100px;
+  background-color: yellow;
+  margin: 2px;
+  float: left;
+}
+
+.more-content{
+  width: 32%;
+  background-color: pink;
+  top: 0;
+  bottom: 0;
+  left: 700pxpx;
+  right: 0;
+  position: absolute;
+  margin: auto;
+  padding: 20px;
+}
+
 .clearfix:after {
   content: "";
   clear: both;
   display: block;
 }
+
+
 
 
 

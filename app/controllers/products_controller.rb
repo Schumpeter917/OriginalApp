@@ -8,7 +8,9 @@ class ProductsController < ApplicationController
   end
   
   def show
-    @product = User.find(params[:id])
+    user = Product.find(params[:id]).user
+    @products = user.products.order("created_at DESC").limit(10)
+    @product = Product.find(params[:id])
   end
   
   private

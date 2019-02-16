@@ -1,1 +1,28 @@
-投稿の詳細
+<div class="content-row">
+  <div class="detail-wrap">
+    <div class="detail">
+        <div class="image-detail">
+          <%= image_tag("#{@product.image}", :width => "100%") %>
+        </div>
+        <div class="title-detail">
+          <%= @product.title %>
+        </div>  
+        <div class="ingredient">
+          <%= @product.ingredient %>
+        </div>  
+        <div class="text">
+          <%= @product.text %>
+        </div>  
+        <div class="recipe">
+          <%= @product.recipe %>
+        </div>  
+    </div>
+    <div class="more-content">
+      <li class="image">
+        <% @products.each do |product| %>
+          <%= link_to image_tag("#{product.image}", :class => "image", :width => "100%"), "/products/#{product.id}" %>
+        <% end %>
+      </li>
+    </div>  
+  </div>
+</div>
