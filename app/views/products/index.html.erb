@@ -1,46 +1,44 @@
-<div class="productlist clearfix">
-<!--ランキング表示  -->
-  <div class="ranking">
-      <h1>ランキング</h1>
-    <ul>
-      <li class="product">
-        <div class="image" style="background-image: url(<%= @product.image %>)";>
-          1位
-        </div> 
-        <div class="nickname">
-          <%= @product.title %>フォローする
-        </div> 
-      </li>
-    </ul>
-  </div>
-<!--投稿一覧  -->
-  <div class="product-wrap">
-    <h1>みんなの投稿</h1>
-    <% @products.each do |product| %>
-    <% if user_signed_in? %>
-    <% unless @product.user.id == current_user.id %>
-       <ul>
-         <li class="product">
-           <div class="image" style="background-image: url(<%= product.image %>)";>
-           </div> 
-           <div class="nickname">
-             <%= link_to "#{product.user.nickname}", "/users/#{product.user.id}" %>
-           </div> 
-         </li>
-       </ul> 
-     <% end %>
-     <% else %>
-       <ul>
-         <li class="product">
-           <div class="image" style="background-image: url(<%= product.image %>)";>
-           </div> 
-           <div class="nickname">
-             <%= link_to "#{product.user.nickname}", "/users/#{product.user.id}" %>
-           </div> 
-         </li>
-       </ul> 
-     <% end %>   
-     <% end %> 
-  </div>  
+<div class="content-row">
+  <div class="productlist clearfix">
+  <!--ランキング表示  -->
+      <div class="ranking">
+            <h1>ランキング</h1>
+            <div class="product">
+              <div class="image">
+                <%= link_to image_tag("#{@product.image}", :class => "image", :width => "100%"), "/products/#{@product.id}" %>
+              </div>  
+              <div class="nickname">
+                <%= @product.user.nickname %>
+              </div> 
+            </div>  
+      </div>    
+  <!--投稿一覧  -->
+      <div class="product-wrap">
+          <h1>みんなの投稿</h1>
+          <% @products.each do |product| %>
+          <% if user_signed_in? %>
+          <% unless product.user.id == current_user.id %>
+             <div class="product">
+                 <div class="image">
+                  <%= link_to image_tag("#{product.image}", :class => "image", :width => "100%"), "/products/#{product.id}" %>
+                 </div>
+                 <div class="nickname">
+                   <%= link_to "#{product.user.nickname}", "/users/#{product.user.id}" %>
+                 </div>
+              </div>     
+           <% end %>
+           <% else %>
+             <div class="product">
+                 <div class="image">
+                  <%= link_to image_tag("#{product.image}", :class => "image", :width => "100%"), "/products/#{product.id}" %>
+                 </div>
+                 <div class="nickname">
+                   <%= link_to "#{product.user.nickname}", "/users/#{product.user.id}" %>
+                 </div>
+              </div>   
+           <% end %>   
+           <% end %> 
+         </div>
+  </div>     
 </div>  
   

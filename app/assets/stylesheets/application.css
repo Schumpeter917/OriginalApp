@@ -70,9 +70,8 @@ header{
   align-items: center;
 }
 
-footer{
-  background-color: white;
-  height: 5vh;
+.content-row{
+  margin: 0 100px;
 }
 
 .clearfix:after {
@@ -83,7 +82,7 @@ footer{
 
 .form-wrap{
     height: 75vh;
-    margin-top: 140px;
+    margin: 140px 0;
     position: relative;
 }
 
@@ -99,4 +98,8 @@ footer{
     margin: auto;
 }
 
-
+footer{
+  background-color: white;
+  height: 5vh;
+  width: 100%;
+}
