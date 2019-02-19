@@ -81,14 +81,14 @@ header{
 }
 
 .form-wrap{
-    height: 75vh;
+    height: 500px; 
     margin: 140px 0;
     position: relative;
 }
 
 .form{
-    height: 80%;
     background-color: white;
+    height: 80%;
     width: 60%;
     top: 0;
     bottom: 100px;
@@ -100,6 +100,6 @@ header{
 
 footer{
   background-color: white;
-  height: 5vh;
+  height: 500px;
   width: 100%;
 }
