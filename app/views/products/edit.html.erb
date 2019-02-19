@@ -1,0 +1,11 @@
+<div class="form-wrap">
+  <div class="form">
+    <%= form_for(@product) do |f| %>
+    <h3>タイトル（最大20字）</h3>
+      <%= f.text_field :title, value: "#{@product.title}", maxlength: "20" %>
+    <h3>写真</h3>
+      <%= f.text_field :image, vlaue: "#{@product.image}" %>
+      <%= f.submit "タイトルと画像を編集する" %>
+    <% end %>
+  </div>  
+</div>    

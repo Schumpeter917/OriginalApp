@@ -21,6 +21,15 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
   end
   
+  def edit
+    @product = Product.find(params[:id])
+  end
+
+  def update
+    product = Product.find(params[:id])
+    product.update(create_params) if product.user_id == current_user.id
+  end
+  
   private
   def move_to_index
     redirect_to action: :index unless user_signed_in?
