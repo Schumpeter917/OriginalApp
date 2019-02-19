@@ -4,7 +4,6 @@ class ProductsController < ApplicationController
   
   def index
     @products = Product.order("created_at DESC")
-    @product = Product.find(5)
   end
   
   def new
@@ -28,6 +27,11 @@ class ProductsController < ApplicationController
   def update
     product = Product.find(params[:id])
     product.update(create_params) if product.user_id == current_user.id
+  end
+  
+  def destroy
+    product = Product.find(params[:id])
+    product.destroy if product.user_id == current_user.id
   end
   
   private
