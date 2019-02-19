@@ -2,9 +2,9 @@
   <div class="form">
     <%= form_for(@product) do |f| %>
     <h3>タイトル（最大20字）</h3>
-      <%= f.text_field :title, placeholer: "例：ナスの肉みそ炒め", maxlength: "20" %>
+      <%= f.text_field :title, placeholder: "例：ナスの肉みそ炒め", maxlength: "20" %>
     <h3>写真</h3>
-      <%= f.text_field :image %>
+      <%= f.text_field :image, placeholder: "画像のURL" %>
       <%= f.submit "タイトルと画像を投稿する" %>
     <% end %>
   </div>
